@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 
 namespace HomeWork
 {
@@ -7,14 +7,13 @@ namespace HomeWork
     /// </summary>
     class DBClass
     {
+        private EmailsDataContext emails = new EmailsDataContext();
         /// <summary>
-        /// Адреса для рассылки
+        /// Получение адресов с беы данных
         /// </summary>
-        public List<string> listStrMails = new List<string>
+        public IQueryable<Email> Emails
         {
-            "TestSMTe@yandex.ru",
-            "danteat@mail.ru",
-            "Cheefs123@gmail.com"
-        };
+            get => from c in emails.Email select c;
+        }   
     }
 }
