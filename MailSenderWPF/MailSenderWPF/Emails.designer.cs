@@ -75,8 +75,8 @@ namespace MailSenderWPF
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Email")]
-	public partial class Email : INotifyPropertyChanging, INotifyPropertyChanged
-	{
+	public partial class Email : INotifyPropertyChanging, INotifyPropertyChanged,IDataErrorInfo
+    {
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
@@ -102,8 +102,20 @@ namespace MailSenderWPF
 		{
 			OnCreated();
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+        public string this[string propertyName]
+        {
+            get
+            {
+                if (propertyName == "Value")
+                {
+                    if (_Value != null && _Value.Length < 4) return "Необходимо указать правильный e-mail!";
+                }
+                return "";
+            }
+
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Id
 		{
 			get
@@ -162,8 +174,15 @@ namespace MailSenderWPF
 				}
 			}
 		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
+        public string Error
+        {
+            get
+            {
+                return "";
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
 		

@@ -11,9 +11,7 @@ namespace MailSenderWPF
         {
             InitializeComponent();
 
-            InitializeComponent();
-
-            btnConfirm.Click += delegate { Hide(); };
+            btnConfirm.Click += delegate {Hide(); };
         }
     }
 }

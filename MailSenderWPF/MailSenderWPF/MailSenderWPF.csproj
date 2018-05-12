@@ -84,6 +84,7 @@
     <Compile Include="Classes\IViev.cs" />
     <Compile Include="Classes\Scheduler.cs" />
     <Compile Include="Classes\VariablesClass.cs" />
+    <Compile Include="DataValidation\DemoValidator.cs" />
     <Compile Include="Emails.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,10 +192,13 @@
     <Resource Include="Images\Pencil.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HomeWork\HomeWork\TabSwitcher\TabSwitcher.csproj">
+    <ProjectReference Include="..\TabSwitcher\TabSwitcher.csproj">
       <Project>{8174892C-2162-4259-A946-D13D02D03144}</Project>
       <Name>TabSwitcher</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

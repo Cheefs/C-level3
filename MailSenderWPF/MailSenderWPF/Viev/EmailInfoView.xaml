@@ -33,17 +33,21 @@
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Grid.Row="1"
                 TextWrapping="Wrap" Text="Search By Name:" VerticalAlignment="Top"
-                Width="136" Height="40" FontFamily="AR DESTINE" Grid.RowSpan="2" FontSize="16" Margin="10,11,0,0">
-            <TextBlock.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0.052"/>
-                    <GradientStop Color="#FFB9FF00" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBlock.Foreground>
+                Width="136" Height="41" FontFamily="AR DESTINE" Grid.RowSpan="2" FontSize="16" Margin="10,10,0,0" FontWeight="Bold" Foreground="Black">
+            <TextBlock.Background>
+                <ImageBrush TileMode="FlipX"/>
+            </TextBlock.Background>
         </TextBlock>
         <TextBox HorizontalAlignment="Left" Height="Auto" Margin="337,7,0,0"
                     Grid.Row="1" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="235">
-        </TextBox>
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FF878585" Offset="0"/>
+                    <GradientStop Color="#FFCFCBC3" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
     </Grid>
 </UserControl>
 

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:v="clr-namespace:MailSenderWPF.DataValidation"
              xmlns:ignore="http://www.galasoft.ch/ignore"
              mc:Ignorable="d ignore"
              DataContext="{Binding Main, Source={StaticResource Locator}}">
@@ -21,8 +22,18 @@
         <TextBlock TextWrapping="Wrap" Text="Id:"/>
         <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Value:"/>
         <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Name:"/>
-        <TextBox Grid.Column="1" TextWrapping="Wrap" Text="{Binding EmailInfo.Id,Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="{Binding EmailInfo.Value,Mode=TwoWay}"/>
+
+        <TextBox Grid.Column="1"  TextWrapping="Wrap"  Validation.Error="TextBox_Error" >
+            <TextBox.Text>
+                <Binding Path="EmailInfo.Id" Mode="TwoWay" ValidatesOnExceptions="True" ValidatesOnDataErrors="True" NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <v:DemoValidator/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBox Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="{Binding EmailInfo.Value,Mode=TwoWay,NotifyOnValidationError=true,ValidatesOnDataErrors=True}" Validation.Error="TextBox_Error"/>
         <TextBox Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding EmailInfo.Name,Mode=TwoWay}"/>
         <Button Content="Сохранить"
                 FontWeight="Bold" Grid.Row="5"
