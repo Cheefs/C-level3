@@ -2,6 +2,8 @@
 using System.Windows;
 using MailSenderWPF.ViewModel;
 using MailSenderDll;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MailSenderWPF
 {
@@ -12,54 +14,79 @@ namespace MailSenderWPF
     {
 
         #region  реализация интерфейса IViev
-        public string MsgText { get => rtbRun.Text; set => rtbRun.Text = value; }
+        public string MsgText { get => rtbText.Text; set => rtbText.Text = value; }
         public string Sender { get => cbSenderSelect.Text; set => cbSenderSelect.Text = value; }
         public string MsgHead { get => tbxHeadMsg.Text; set => tbxHeadMsg.Text = value; }
         public string SmptServer { get => cbSmtpSelect.Text; set => cbSmtpSelect.Text = value; }
 
         #endregion
-        private readonly ViewModelLocator _locator;
 
+        private readonly ViewModelLocator _locator;
+         Dictionary<DateTime, string> dicDates = new Dictionary<DateTime, string>();
         public MainWindow()
         {
-           
+
             InitializeComponent();
             Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             Application.Current.MainWindow = this;
+
             _locator = (ViewModelLocator)FindResource("Locator");
             Scheduler sc = new Scheduler(this);
+            
+            lvwSheduler.Items.Clear();
+            lvwSheduler.ItemsSource = dicDates;
+
+            lvwSheduler.DisplayMemberPath = "Key";
+            lvwSheduler.SelectedValuePath = "Value";
 
             cbSenderSelect.ItemsSource = VariablesClass.Senders;
-
             cbSenderSelect.DisplayMemberPath = "Key";
             cbSenderSelect.SelectedValuePath = "Value";
+            cbSenderSelect.SelectedIndex = 0;
+
 
             cbSmtpSelect.ItemsSource = VariablesClass.SmptServer;
             cbSmtpSelect.DisplayMemberPath = "Key";
             cbSmtpSelect.SelectedValuePath = "Value";
+            cbSmtpSelect.SelectedIndex = 0;
+
+            ListVievItemsScheduler.BtnDeleteClick += delegate 
+            {
+                if(dicDates.Keys!=null)
+                {
+                    dicDates.Remove(dicDates.Keys.First<DateTime>());
+                    lvwSheduler.Items.Refresh();
+                }
+            };
 
             btnClock.Click += delegate { tabControl.SelectedItem = tabPlanner; };
-            
+
             btnSendAtOnce.Click += delegate
             {
-                string strLogin = cbSenderSelect.Text;
-                string strPassword = cbSenderSelect.SelectedValue.ToString(); 
-
-                MailSender mailSender = new MailSender(strLogin, strPassword);
-                    sc.SendMails(_locator.Main.Emails);
-
+                sc.SendMails(_locator.Main.Emails);
                 if (MsgText == "" || MsgHead == "")
                 {
                     MessageBox.Show("Письмо не заполнено");
                     tabEdit.Focus();
                 }
             };
+
             btnSend.Click += delegate
             {
-                var tsSendTime = sc.GetSendTime(tpSetTime.Text);
+                MailSender mailSender = new MailSender(cbSenderSelect.Text, cbSenderSelect.SelectedValue.ToString());
+                sc.SendEmails(dicDates, _locator.Main.Emails);
+                lvwSheduler.Items.Refresh();
+
+                rtbxBody.Visibility = Visibility.Hidden;
+            };
+
+            BtnAddToPlanner.Click += delegate
+            {
                 var locator = (ViewModelLocator)FindResource("Locator");
-              
-                    tsSendTime = sc.GetSendTime(tpSetTime.Text);
+
+                var tsSendTime = sc.GetSendTime(ListVievItemsScheduler.Text);
+
+                /*(((cldSchedulDateTimes.SelectedDate ?? DateTime.Today).Add(tsSendTime)),MsgText)*/
 
                 DateTime dtSendDateTime = (cldSchedulDateTimes.SelectedDate ?? DateTime.Today).Add(tsSendTime);
                 if (dtSendDateTime < DateTime.Now)
@@ -68,11 +95,11 @@ namespace MailSenderWPF
                     время");
                     return;
                 }
-                MailSender mailSender = new MailSender(cbSenderSelect.Text, cbSenderSelect.SelectedValue.ToString());
-
-                sc.SendEmails(dtSendDateTime, _locator.Main.Emails); 
+                dicDates.Add(cldSchedulDateTimes.SelectedDate ??
+                DateTime.Today.Add(tsSendTime), MsgText);
+                lvwSheduler.Items.Refresh();
             };
-
+        
             #region ComingSoon
             edcSender.BtnAddClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSender.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
@@ -87,6 +114,8 @@ namespace MailSenderWPF
             edcMails.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
             #endregion
 
+            ListVievItemsScheduler.BtnAddClick += delegate  {rtbxBody.Visibility =Visibility.Visible;};
+            
             tabSwtcher.btnNextClick += delegate
             {
                 if (tabControl.SelectedIndex > 0)

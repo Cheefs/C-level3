@@ -1,6 +1,6 @@
 ﻿namespace MailSenderWPF
 {
-    interface IViev
+    public interface IViev
     {
         /// <summary>
         /// Тема сообщения 
@@ -18,6 +18,5 @@
         /// Настройка Smpt сервера
         /// </summary>
         string SmptServer { get; set; }
-      
     }
 }

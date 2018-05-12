@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Threading;
 using MailSenderDll;
+using System.Linq;
 using CodePasswordDLL;
+using System.Windows;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace MailSenderWPF
@@ -11,13 +13,12 @@ namespace MailSenderWPF
     /// Класс планировщик, который создает расписание, следит за его выполнением и напоминает событиях
     /// Также помогает автоматизировать рассылку писем в соответствии с расписанием
     /// </summary>
-    class Scheduler
+    public class Scheduler
     {
         IViev viev;
-        
         public Scheduler(IViev Viev)
         {
-            viev = Viev;
+            this.viev = Viev;
         }
         /// <summary>
         /// Окно успешной отправки сообщения
@@ -27,18 +28,25 @@ namespace MailSenderWPF
         /// Окно ошибки при отправке
         /// </summary>
         Error ew = new Error();
-        /// <summary>
-        /// Таймер
-        /// </summary>
-        DispatcherTimer timer = new DispatcherTimer();
-        /// <summary>
-        /// Дата и время отправки
-        /// </summary>
-        DateTime dtSend;
-        /// <summary>
-        /// Коллекция адресов
-        /// </summary>
-        ObservableCollection<Email> emails;
+
+        private readonly DispatcherTimer timer = new DispatcherTimer(); // таймер
+        private MailSender mSender; // экземпляр класса отвечающего за отправку писем
+                                    //   private DateTime dtSend; // дата и время отправки
+
+        private ObservableCollection<Email> emails; // коллекция email'ов адресатов
+
+        public Dictionary<DateTime, string> dicDates = new Dictionary<DateTime, string>();
+
+        public Dictionary<DateTime, string> DatesEmailTexts
+        {
+            get { return dicDates; }
+            set
+            {
+                dicDates = value;
+                dicDates = dicDates.OrderBy(pair => pair.Key).
+               ToDictionary(pair => pair.Key, pair => pair.Value);
+            }
+        }
 
         /// <summary>
         /// Методе который превращаем строку из текстбокса tbTimePicker в TimeSpan
@@ -60,9 +68,10 @@ namespace MailSenderWPF
         /// </summary>
         /// <param name="dtSend">дата и время отправки </param>
         /// <param name="emails">список электронных адресов </param>
-        public void SendEmails(DateTime dtSend, ObservableCollection<Email> emails)
+        public void SendEmails(Dictionary<DateTime, string> DicDates /*DateTime dtSend*/,
+            ObservableCollection<Email> emails)
         {
-            this.dtSend = dtSend;
+            this.dicDates = DicDates;
             this.emails = emails;
             timer.Tick += Timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 1);
@@ -73,10 +82,14 @@ namespace MailSenderWPF
         /// </summary>
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (dtSend.ToShortTimeString() == DateTime.Now.ToShortTimeString())
+            if (dicDates.Count == 0)
             {
-                SendMails(emails);
-                timer.Stop();   
+                timer.Stop();
+            }
+            else if (dicDates.Keys.First<DateTime>().ToShortTimeString() == DateTime.Now.ToShortTimeString())
+            {
+                this.SendMails(emails);
+                dicDates.Remove(dicDates.Keys.First<DateTime>());
             }
         }
         /// <summary>
@@ -85,28 +98,29 @@ namespace MailSenderWPF
         /// <param name="emails">Список адресов</param>
         public void SendMails(ObservableCollection<Email> emails)
         {
+            mSender = new MailSender(viev.Sender, CodePassword.GetPassword(VariablesClass.Senders[viev.Sender]))
+            {
+                StrBody = dicDates[dicDates.Keys.First<DateTime>()],
+                StrSubject = $"Рассылка от {dicDates.Keys.First<DateTime>().ToShortTimeString()} ",
+                SmptServer = viev.SmptServer,
+                SmtpPort = VariablesClass.SmptServer[viev.SmptServer]
+
+            };
             bool err = false;
             try
             {
-                MailSender mSender = new MailSender ( viev.Sender, CodePassword.GetPassword(VariablesClass.Senders[viev.Sender]) )
-                {
-                    StrSubject = viev.MsgHead,
-                    StrBody = viev.MsgText,
-                    SmptServer = viev.SmptServer,
-                    SmtpPort = VariablesClass.SmptServer[viev.SmptServer]
-                };
                 foreach (Email email in emails)
                 {
                     mSender.SendMail(email.Value, email.Name);
                 }
             }
-           catch(Exception)
+            catch (Exception)
             {
                 err = true;
                 System.Media.SystemSounds.Hand.Play();
                 ew.Show();
             }
-            if(err==false)
+            if (err == false)
             {
                 System.Media.SystemSounds.Asterisk.Play();
                 sd.Show();
