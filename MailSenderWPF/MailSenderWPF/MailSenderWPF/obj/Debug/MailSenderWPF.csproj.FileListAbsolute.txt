@@ -1,0 +1,129 @@
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF_MarkupCompile.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Brushes.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Core.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Icons.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF_MarkupCompile.lref
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\App.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.exe.config
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.exe
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\CodePasswordDLL.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\CommonServiceLocator.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderDll.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\App.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.g.resources
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.Properties.Resources.resources
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.CopyComplete
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.exe
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Error.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Success.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\MainWindow.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Error.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Success.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\MainWindow.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\EmailInfoView.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\EmailInfoView.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\SaveEmailView.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\SaveEmailView.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\EmailInfoView.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Brushes.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Core.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Icons.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\SaveEmailView.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Error.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Success.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\EmailInfoView.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\SaveEmailView.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\App.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF_MarkupCompile.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF_MarkupCompile.lref
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.exe
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.exe.config
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.exe
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\CommonServiceLocator.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\MainWindow.g.cs
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\App.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Error.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Success.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\MainWindow.baml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.g.resources
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.Properties.Resources.resources
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.GenerateResource.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.CopyComplete
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.exe.config
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.exe
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\MailSenderWPF.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\CommonServiceLocator.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.dll
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\EmailInfoView.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Brushes.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Core.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Theme\Icons.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Error.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Success.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\EmailInfoView.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\MainWindow.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\SaveEmailView.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\App.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF_MarkupCompile.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF_MarkupCompile.lref
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\App.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Error.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Success.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\MainWindow.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\Viev\SaveEmailView.baml
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.g.resources
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.Properties.Resources.resources
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.csproj.CopyComplete
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.exe
+C:\Users\User\Desktop\MailSenderWPF\MailSenderWPF\MailSenderWPF\obj\Debug\MailSenderWPF.pdb
