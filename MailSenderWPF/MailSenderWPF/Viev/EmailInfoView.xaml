@@ -39,11 +39,11 @@
             </TextBlock.Background>
         </TextBlock>
         <TextBox HorizontalAlignment="Left" Height="Auto" Margin="337,7,0,0"
-                    Grid.Row="1" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="235">
+                    Grid.Row="1" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="235" Foreground="Black">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FF878585" Offset="0"/>
-                    <GradientStop Color="#FFCFCBC3" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>

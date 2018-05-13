@@ -4,27 +4,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace CodePasswordDLL.Tests
 {
     [TestClass()]
     public class CodePasswordTests
     {
+        string strIn;
+        string strExpected;
+
+        [TestInitialize()]
+        public void TestInitialize()
+        {
+            strIn = "abc";
+            strExpected = "bcd";
+            Debug.WriteLine("Test started");
+        }
         [TestMethod()]
-        public void getCodPassword_empty_empty()
+        public void getCodPassword_abc_bcd()
         {
 
-            // arrange 
-            string strIn = "";
-            string strExpected = "";
-
-            // act 
+            // act
             string strActual = CodePassword.GetCodPassword(strIn);
-
+            Debug.WriteLine("Test started");
             //assert
             Assert.AreEqual(strExpected, strActual);
-
         }
+
     }
 }
