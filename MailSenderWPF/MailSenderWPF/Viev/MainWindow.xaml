@@ -12,7 +12,25 @@
         Title="MailSender"  MinHeight="356" MinWidth="644" Height="450" Width="644" Icon="/MailSenderWPF;component/Images/Letter.png">
 
     <Grid Margin="0,-17,0,0"  >
-        <TabControl x:Name="tabControl" Height="370" VerticalAlignment="Center" Margin="0,10,0,56">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="236*"/>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="182*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="224*"/>
+            <RowDefinition Height="68*"/>
+
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="tabControl" Grid.RowSpan="5" Grid.ColumnSpan="5" Margin="0,10,0,11">
             <TabItem Header="Рассыльшик" Margin="-6,4,5,-3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="93">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,13">
                     <Grid>
@@ -22,12 +40,11 @@
                                 <GradientStop Color="White" Offset="1"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-                        <vievs:EmailInfoView x:Name="emailInfo" VerticalAlignment= "Stretch"
-                                         HorizontalAlignment="Right" Grid.ColumnSpan="1" Margin="0,70,0,0" Width="440" />
-                        <vievs:SaveEmailView HorizontalAlignment="Left" Margin="0,65,0,0" Width="184"/>
+                        <vievs:EmailInfoView x:Name="emailInfo" VerticalAlignment= "Stretch" Grid.ColumnSpan="1" Margin="142,80,0,0" />
+                        <vievs:SaveEmailView x:Name="ctrlCaveEmail" HorizontalAlignment="Left" Margin="0,65,0,0" Width="184"/>
                         <ToolBarTray Height="54" VerticalAlignment="Top">
 
-                            <ToolBar x:Name="tbSender" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="404" Margin="-3,-3,-401,0">
+                            <ToolBar x:Name="tbSender" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="405" Margin="-3,-3,-402,0">
 
                                 <Label x:Name="lSender" Content="Sender Choice:" HorizontalAlignment="Left" FontSize="18" FontFamily="AR DESTINE" Width="135">
                                     <Label.Foreground>
@@ -49,8 +66,8 @@
                                 </ComboBox>
                                 <TabSwitcher:EditControl x:Name="edcSender" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="74"/>
                             </ToolBar>
-                            <ToolBar x:Name="tbSmtp" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Band="1" BandIndex="0" Margin="-3,-5,0,0" Width="404">
-                                <Label Content="Smpt Server:" VerticalAlignment="Top" FontSize="18" FontFamily="AR DESTINE" HorizontalAlignment="Left" Width="135">
+                            <ToolBar x:Name="tbSmtp" Band="1" BandIndex="0" Margin="-3,-5,-6,1" HorizontalAlignment="Left" Width="405">
+                                <Label Content="Smpt Server:" FontSize="18" FontFamily="AR DESTINE" HorizontalAlignment="Left" Width="135" Margin="0,0,0,-5">
                                     <Label.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FFF9F900" Offset="0.525"/>
@@ -60,7 +77,7 @@
                                         </LinearGradientBrush>
                                     </Label.Foreground>
                                 </Label>
-                                <ComboBox x:Name="cbSmtpSelect" Height="25" Margin="0" VerticalAlignment="Top" Width="167" ToolTip="Выбрать smtp-сервер" SelectedIndex="1" Foreground="#FF01021B">
+                                <ComboBox x:Name="cbSmtpSelect" Height="Auto" Width="167" ToolTip="Выбрать smtp-сервер" SelectedIndex="1" Foreground="#FF01021B">
                                     <ComboBox.Background>
                                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                             <GradientStop Color="#FF878585" Offset="0"/>
@@ -73,7 +90,7 @@
                             </ToolBar>
 
                             <ToolBar x:Name="tbPlanner" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top"
-                                Width="230" Band="0" BandIndex="1" Margin="397,-3,-397,0" >
+                                Width="229" Band="0" BandIndex="1" Margin="398,-3,-397,0" >
                                 <Label x:Name="lPlanner" Content="To Planner" Width="112" FontFamily="AR DESTINE" FontSize="20" Background="{x:Null}" Margin="0,0,0,2" HorizontalAlignment="Center">
                                     <Label.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -88,7 +105,7 @@
                                     <Image Source="/MailSenderWPF;component/Images/Clock.png"/>
                                 </Button>
                             </ToolBar>
-                            <ToolBar x:Name="tbAddressee" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="230" Band="1" BandIndex="1" Margin="-4,-5,-3,0" >
+                            <ToolBar x:Name="tbAddressee" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="229" Band="1" BandIndex="1" Margin="2,-5,-8,0" >
                                 <Label x:Name="lAddressee" Content="Mails list" Height="25" Width="Auto" FontFamily="AR DESTINE" FontSize="18">
                                     <Label.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -109,22 +126,40 @@
             <TabItem x:Name="tabPlanner" Header="Планировшик" Margin="-9,4,10,-1" Width="104" HorizontalAlignment="Center" >
                 <ToolBarPanel >
                     <Grid Height="350">
-                        <TabSwitcher:ListViewItemScheduler x:Name="ListVievItemsScheduler" Margin="416,145,-2,172"/>
-                        <RichTextBox x:Name="rtbxBody" HorizontalAlignment="Left" Height="Auto" Width="198" Margin="416,178,0,43" Visibility="Hidden">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="141*"/>
+                            <RowDefinition Height="99*"/>
+                            <RowDefinition Height="95*"/>
+                            <RowDefinition Height="15*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="26*"/>
+                            <ColumnDefinition Width="177*"/>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="190*"/>
+                            <ColumnDefinition Width="142*"/>
+                            <ColumnDefinition Width="49*"/>
+                            <ColumnDefinition Width="22*"/>
+                        </Grid.ColumnDefinitions>
+                        
+    <TabSwitcher:ListViewItemScheduler x:Name="ListVievItemsScheduler" Margin="5,4,0,62" Grid.Column="5" Grid.ColumnSpan="2" Height="Auto" Width="Auto" Grid.Row="1"/>
+                        
+                        <RichTextBox x:Name="rtbxBody" Height="Auto" Margin="5,37,19,28" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Foreground="Black">
                             <RichTextBox.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                     <GradientStop Color="#FF878585" Offset="0"/>
-                                    <GradientStop Color="#FFA2A19D" Offset="1"/>
+                                    <GradientStop Color="#FFFFFEF8" Offset="1"/>
                                 </LinearGradientBrush>
                             </RichTextBox.Background>
                             <FlowDocument>
-                                <Paragraph x:Name="rtbPragraph1">
-                                    <Run x:Name="rtbText" />
+                                <Paragraph >
+                                    <Run x:Name="rtbText"/>
                                 </Paragraph>
                             </FlowDocument>
                         </RichTextBox>
 
-                        <ListView x:Name="lvwSheduler" Margin="220,10,26,210" Foreground="Black">
+                        <ListView x:Name="lvwSheduler" Margin="17,10,25,1" Foreground="Black" Grid.Column="3" Grid.ColumnSpan="4">
                             <ListView.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                     <GradientStop Color="#FF878585" Offset="0"/>
@@ -143,7 +178,7 @@
                         </ListView>
 
 
-                        <Calendar x:Name="cldSchedulDateTimes" Margin="10,0,404,181" SelectionMode="MultipleRange">
+                        <Calendar x:Name="cldSchedulDateTimes" Margin="10,0,1,71" SelectionMode="MultipleRange" Grid.ColumnSpan="4" Grid.RowSpan="2">
                             <Calendar.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                     <GradientStop Color="#FF878585" Offset="0"/>
@@ -151,13 +186,13 @@
                                 </LinearGradientBrush>
                             </Calendar.Background>
                         </Calendar>
-                        <Button x:Name="btnSend" Margin="225,179,218,141" Height="30">
+                        <Button x:Name="btnSend" Margin="4,38,5,0" Grid.Column="4" Height="30" VerticalAlignment="Top" Grid.Row="1">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/MailSenderWPF;component/Images/Clock.png" Width="16" Height="16" />
                                 <TextBlock Margin="3,0,0,0" Text="Запланировать оптправку" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnSendAtOnce" Margin="225,259,213,61" Height="30">
+                        <Button x:Name="btnSendAtOnce" Margin="4,19,0,0" Grid.Column="4" Height="30" VerticalAlignment="Top" Grid.Row="2">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/MailSenderWPF;component/Images/Letter.png" Width="16" Height="16" />
                                 <TextBlock Margin="3,0,0,0" Text="Send Now" VerticalAlignment="Center" FontFamily="AR DESTINE" FontSize="20" TextDecorations="Underline" FontStyle="Italic">
@@ -170,7 +205,7 @@
                                 </TextBlock>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="BtnAddToPlanner" Margin="225,145,218,0" VerticalAlignment="Top" Height="29">
+                        <Button x:Name="BtnAddToPlanner" Margin="4,4,5,0" Grid.Column="4" Grid.Row="1" Height="29" VerticalAlignment="Top">
                             <StackPanel Width="164" Orientation="Horizontal" Height="20">
                                 <Image Source="/MailSenderWPF;component/Images/Add.png" Margin="0,0,10,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="1" Width="34" />
                                 <TextBlock Text="Add To Plan" FontSize="18" FontFamily="AR DESTINE" RenderTransformOrigin="0.5,0.5" Width="108" >
@@ -207,7 +242,7 @@
                                 </LinearGradientBrush>
                             </Label.Foreground>
                         </Label>
-                        <TextBox x:Name="tbxHeadMsg" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0" Text="Не Актуально в данной версии" FontWeight="Bold" FontSize="16">
+                        <TextBox x:Name="tbxHeadMsg" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0" Text="Send Now" FontWeight="Bold" FontSize="16">
                             <TextBox.Foreground>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black" Offset="0"/>
@@ -232,7 +267,7 @@
                         <RichTextBox x:Name="rtbxMessage" HorizontalAlignment="Left" Height="165" Width="625" Margin="0,0,-1,0" FontSize="22">
                             <FlowDocument>
                                 <Paragraph x:Name="rtbPragraph">
-                                    <Run x:Name="rtbRun" />
+                                    <Run x:Name="rtbRun" Text="Не Актуально в данной версии"/>
                                 </Paragraph>
                             </FlowDocument>
                         </RichTextBox>
@@ -246,6 +281,6 @@
 
 
         </TabControl>
-        <TabSwitcher:TabSwitcherControl x:Name="tabSwtcher" Height="Auto" Margin="226,384,176,8" Width="Auto" IsHideBtnPrevios="True"/>
+        <TabSwitcher:TabSwitcherControl x:Name="tabSwtcher" Height="Auto" Margin="10,1,8,3" Width="Auto" IsHideBtnPrevios="True" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
     </Grid>
 </Window>

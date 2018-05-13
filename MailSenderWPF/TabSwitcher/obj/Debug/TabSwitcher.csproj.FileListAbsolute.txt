@@ -30,4 +30,3 @@ C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\TabSwi
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\TabSwitcher\obj\Debug\ListViewItemScheduler.baml
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\TabSwitcher\bin\Debug\Xceed.Wpf.Toolkit.dll
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CopyComplete
-C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csprojResolveAssemblyReference.cache

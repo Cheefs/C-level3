@@ -18,6 +18,7 @@ namespace MailSenderWPF
         public string Sender { get => cbSenderSelect.Text; set => cbSenderSelect.Text = value; }
         public string MsgHead { get => tbxHeadMsg.Text; set => tbxHeadMsg.Text = value; }
         public string SmptServer { get => cbSmtpSelect.Text; set => cbSmtpSelect.Text = value; }
+        public  bool FlagNow { get; set; }
 
         #endregion
 
@@ -63,21 +64,25 @@ namespace MailSenderWPF
 
             btnSendAtOnce.Click += delegate
             {
-                sc.SendMails(_locator.Main.Emails);
+                FlagNow = true;
+                MailSender mailSender = new MailSender(cbSenderSelect.Text, cbSenderSelect.SelectedValue.ToString());
                 if (MsgText == "" || MsgHead == "")
                 {
-                    MessageBox.Show("Письмо не заполнено");
-                    tabEdit.Focus();
+                    MessageBox.Show("Заполните текст письма");
+                    rtbxBody.Visibility = Visibility.Visible;
                 }
+                else
+                sc.SendMails(_locator.Main.Emails);
             };
 
             btnSend.Click += delegate
             {
-                MailSender mailSender = new MailSender(cbSenderSelect.Text, cbSenderSelect.SelectedValue.ToString());
                 sc.SendEmails(dicDates, _locator.Main.Emails);
                 lvwSheduler.Items.Refresh();
 
                 rtbxBody.Visibility = Visibility.Hidden;
+                rtbText.Text = null;
+
             };
 
             BtnAddToPlanner.Click += delegate
@@ -85,8 +90,6 @@ namespace MailSenderWPF
                 var locator = (ViewModelLocator)FindResource("Locator");
 
                 var tsSendTime = sc.GetSendTime(ListVievItemsScheduler.Text);
-
-                /*(((cldSchedulDateTimes.SelectedDate ?? DateTime.Today).Add(tsSendTime)),MsgText)*/
 
                 DateTime dtSendDateTime = (cldSchedulDateTimes.SelectedDate ?? DateTime.Today).Add(tsSendTime);
                 if (dtSendDateTime < DateTime.Now)
@@ -99,8 +102,17 @@ namespace MailSenderWPF
                 DateTime.Today.Add(tsSendTime), MsgText);
                 lvwSheduler.Items.Refresh();
             };
-        
+
             #region ComingSoon
+            edcMails.BtnAddClick += delegate
+            {
+                if (ctrlCaveEmail.Visibility == Visibility.Hidden)
+                    ctrlCaveEmail.Visibility = Visibility.Visible;
+                else ctrlCaveEmail.Visibility = Visibility.Hidden;
+            };
+            edcMails.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
+            edcMails.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
+
             edcSender.BtnAddClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSender.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSender.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
@@ -108,13 +120,14 @@ namespace MailSenderWPF
             edcSmpt.BtnAddClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSmpt.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSmpt.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
-
-            edcMails.BtnAddClick += delegate { MessageBox.Show("ComingSoon"); };
-            edcMails.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
-            edcMails.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
             #endregion
 
-            ListVievItemsScheduler.BtnAddClick += delegate  {rtbxBody.Visibility =Visibility.Visible;};
+            ListVievItemsScheduler.BtnAddClick += delegate  
+            {
+                if(rtbxBody.Visibility == Visibility.Visible)
+                rtbxBody.Visibility =Visibility.Hidden;
+                else rtbxBody.Visibility = Visibility.Visible;
+            };
             
             tabSwtcher.btnNextClick += delegate
             {
@@ -135,6 +148,7 @@ namespace MailSenderWPF
                 tabControl.SelectedIndex--;
             };
         }
+
     }
 }
 

@@ -28,15 +28,12 @@ namespace MailSenderWPF
         /// Окно ошибки при отправке
         /// </summary>
         Error ew = new Error();
-
-        private readonly DispatcherTimer timer = new DispatcherTimer(); // таймер
-        private MailSender mSender; // экземпляр класса отвечающего за отправку писем
-                                    //   private DateTime dtSend; // дата и время отправки
-
-        private ObservableCollection<Email> emails; // коллекция email'ов адресатов
-
+        private string body;
+        private string head;
+        private readonly DispatcherTimer timer = new DispatcherTimer();
+        private MailSender mSender; 
+        private ObservableCollection<Email> emails;
         public Dictionary<DateTime, string> dicDates = new Dictionary<DateTime, string>();
-
         public Dictionary<DateTime, string> DatesEmailTexts
         {
             get { return dicDates; }
@@ -44,7 +41,7 @@ namespace MailSenderWPF
             {
                 dicDates = value;
                 dicDates = dicDates.OrderBy(pair => pair.Key).
-               ToDictionary(pair => pair.Key, pair => pair.Value);
+                ToDictionary(pair => pair.Key, pair => pair.Value);
             }
         }
 
@@ -68,8 +65,7 @@ namespace MailSenderWPF
         /// </summary>
         /// <param name="dtSend">дата и время отправки </param>
         /// <param name="emails">список электронных адресов </param>
-        public void SendEmails(Dictionary<DateTime, string> DicDates /*DateTime dtSend*/,
-            ObservableCollection<Email> emails)
+        public void SendEmails(Dictionary<DateTime, string> DicDates, ObservableCollection<Email> emails)
         {
             this.dicDates = DicDates;
             this.emails = emails;
@@ -88,6 +84,8 @@ namespace MailSenderWPF
             }
             else if (dicDates.Keys.First<DateTime>().ToShortTimeString() == DateTime.Now.ToShortTimeString())
             {
+                body = dicDates[dicDates.Keys.First<DateTime>()];
+                head = $"Рассылка от {dicDates.Keys.First<DateTime>().ToShortTimeString()} ";
                 this.SendMails(emails);
                 dicDates.Remove(dicDates.Keys.First<DateTime>());
             }
@@ -98,33 +96,40 @@ namespace MailSenderWPF
         /// <param name="emails">Список адресов</param>
         public void SendMails(ObservableCollection<Email> emails)
         {
+            if (viev.FlagNow == true)
+            {
+                body = viev.MsgText;
+                head = viev.MsgHead;
+                viev.FlagNow = false;
+            }
             mSender = new MailSender(viev.Sender, CodePassword.GetPassword(VariablesClass.Senders[viev.Sender]))
             {
-                StrBody = dicDates[dicDates.Keys.First<DateTime>()],
-                StrSubject = $"Рассылка от {dicDates.Keys.First<DateTime>().ToShortTimeString()} ",
+                StrBody = body,
+                StrSubject =head,
                 SmptServer = viev.SmptServer,
                 SmtpPort = VariablesClass.SmptServer[viev.SmptServer]
 
             };
             bool err = false;
-            try
-            {
-                foreach (Email email in emails)
+                try
                 {
-                    mSender.SendMail(email.Value, email.Name);
+                    foreach (Email email in emails)
+                    {
+                        mSender.SendMail(email.Value, email.Name);
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                err = true;
-                System.Media.SystemSounds.Hand.Play();
-                ew.Show();
-            }
-            if (err == false)
-            {
-                System.Media.SystemSounds.Asterisk.Play();
-                sd.Show();
-            }
+                catch (Exception)
+                {
+                    err = true;
+                    System.Media.SystemSounds.Hand.Play();
+                    ew.Show();
+                }
+                if (err == false)
+                {
+                    System.Media.SystemSounds.Asterisk.Play();
+                    sd.Show();
+                }
         }
     }
 }
+
