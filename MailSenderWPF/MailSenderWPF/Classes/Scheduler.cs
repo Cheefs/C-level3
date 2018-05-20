@@ -3,7 +3,6 @@ using System.Windows.Threading;
 using MailSenderDll;
 using System.Linq;
 using CodePasswordDLL;
-using System.Windows;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -90,13 +89,11 @@ namespace MailSenderWPF
                 dicDates.Remove(dicDates.Keys.First<DateTime>());
             }
         }
-        /// <summary>
-        /// Отправка писем по всем имейлам сразу
-        /// </summary>
-        /// <param name="emails">Список адресов</param>
-        public void SendMails(ObservableCollection<Email> emails)
+
+
+        public async void SendMails(ObservableCollection<Email> emails)
         {
-            if (viev.FlagNow == true)
+            if(viev.FlagNow == true)
             {
                 body = viev.MsgText;
                 head = viev.MsgHead;
@@ -105,31 +102,32 @@ namespace MailSenderWPF
             mSender = new MailSender(viev.Sender, CodePassword.GetPassword(VariablesClass.Senders[viev.Sender]))
             {
                 StrBody = body,
-                StrSubject =head,
+                StrSubject = head,
                 SmptServer = viev.SmptServer,
                 SmtpPort = VariablesClass.SmptServer[viev.SmptServer]
 
             };
             bool err = false;
-                try
+            try
+            {
+                foreach (Email email in emails)
                 {
-                    foreach (Email email in emails)
-                    {
-                        mSender.SendMail(email.Value, email.Name);
-                    }
+                    await mSender.SendMail(email.Value, email.Name);
                 }
-                catch (Exception)
-                {
-                    err = true;
-                    System.Media.SystemSounds.Hand.Play();
-                    ew.Show();
-                }
-                if (err == false)
-                {
-                    System.Media.SystemSounds.Asterisk.Play();
-                    sd.Show();
-                }
-        }
+            }
+            catch (Exception)
+            {
+                err = true;
+                System.Media.SystemSounds.Hand.Play();
+                ew.Show();
+            }
+            if (err == false)
+            {
+                System.Media.SystemSounds.Asterisk.Play();
+                sd.Show();
+            }
+         
+        } 
     }
 }
 

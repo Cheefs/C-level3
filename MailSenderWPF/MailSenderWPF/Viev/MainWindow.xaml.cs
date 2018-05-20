@@ -12,7 +12,6 @@ namespace MailSenderWPF
     /// </summary>
     public partial class MainWindow : Window, IViev
     {
-
         #region  реализация интерфейса IViev
         public string MsgText { get => rtbText.Text; set => rtbText.Text = value; }
         public string Sender { get => cbSenderSelect.Text; set => cbSenderSelect.Text = value; }
