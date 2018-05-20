@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace MailSenderDll
 {
@@ -45,24 +46,25 @@ namespace MailSenderDll
         /// </summary>
         /// <param name="mail">email адресс</param>
         /// <param name="name">пароль почты</param>
-        public void SendMail(string mail, string name)
+        public Task SendMail(string mail, string name)
         {
-
-            using (MailMessage mm = new MailMessage(StrLogin, mail))
+            return Task.Run(() =>
             {
-                mm.Subject = StrSubject;
-                mm.Body = StrBody;
-                mm.IsBodyHtml = false;
-                SmtpClient sc = new SmtpClient(SmptServer, SmtpPort);
-                sc.EnableSsl = true;
-                sc.DeliveryMethod = SmtpDeliveryMethod.Network;
-                sc.UseDefaultCredentials = false;
-                sc.Credentials = new NetworkCredential(StrLogin, StrPassword);
+                using (MailMessage mm = new MailMessage(StrLogin, mail))
+                {
+                    mm.Subject = StrSubject;
+                    mm.Body = StrBody;
+                    mm.IsBodyHtml = false;
+                    SmtpClient sc = new SmtpClient(SmptServer, SmtpPort);
+                    sc.EnableSsl = true;
+                    sc.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    sc.UseDefaultCredentials = false;
+                    sc.Credentials = new NetworkCredential(StrLogin, StrPassword);
 
-                sc.Send(mm);
-
-            }
-
+                    sc.Send(mm);
+                }
+            });
+           
         }
     }
 }

@@ -142,9 +142,9 @@
                             <ColumnDefinition Width="49*"/>
                             <ColumnDefinition Width="22*"/>
                         </Grid.ColumnDefinitions>
-                        
-    <TabSwitcher:ListViewItemScheduler x:Name="ListVievItemsScheduler" Margin="5,4,0,62" Grid.Column="5" Grid.ColumnSpan="2" Height="Auto" Width="Auto" Grid.Row="1"/>
-                        
+
+                        <TabSwitcher:ListViewItemScheduler x:Name="ListVievItemsScheduler" Margin="5,4,0,62" Grid.Column="5" Grid.ColumnSpan="2" Height="Auto" Width="Auto" Grid.Row="1"/>
+
                         <RichTextBox x:Name="rtbxBody" Height="Auto" Margin="5,37,19,28" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Foreground="Black" Visibility="Hidden">
                             <RichTextBox.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -192,6 +192,7 @@
                                 <TextBlock Margin="3,0,0,0" Text="Запланировать оптправку" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
+
                         <Button x:Name="btnSendAtOnce" Margin="4,19,0,0" Grid.Column="4" Height="30" VerticalAlignment="Top" Grid.Row="2">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/MailSenderWPF;component/Images/Letter.png" Width="16" Height="16" />
@@ -276,8 +277,7 @@
 
                 </Grid>
             </TabItem>
-
-
+            <ProgressBar Height="10" Width="100"/>
 
 
         </TabControl>

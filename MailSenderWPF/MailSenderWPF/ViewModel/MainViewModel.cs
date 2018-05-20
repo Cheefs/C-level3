@@ -71,9 +71,8 @@ namespace MailSenderWPF.ViewModel
             else
                 foreach (var item in _serviceProxy.GetEmails())
                 {
-                    if (Name.ToLower() == item.Name.ToLower() && Name.Length >= item.Name.Length
-                        || Name.ToLower() == item.Name.Substring(0, Name.Length).ToLower()
-                        && Name.Length >= item.Name.Length)
+                    if (Name.ToLower() == item.Name.ToLower() 
+                        || Name.ToLower() == item.Name.Substring(0, Name.Length).ToLower())
                         Emails.Add(item);
                 }
         }
