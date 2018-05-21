@@ -1,5 +1,0 @@
-C:\Users\User\Desktop\MailSenderDll\MailSenderDll\bin\Release\MailSenderDll.dll
-C:\Users\User\Desktop\MailSenderDll\MailSenderDll\bin\Release\MailSenderDll.pdb
-C:\Users\User\Desktop\MailSenderDll\MailSenderDll\obj\Release\MailSenderDll.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\MailSenderDll\MailSenderDll\obj\Release\MailSenderDll.dll
-C:\Users\User\Desktop\MailSenderDll\MailSenderDll\obj\Release\MailSenderDll.pdb

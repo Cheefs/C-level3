@@ -1,48 +1,57 @@
 ﻿using System.Collections.ObjectModel;
-
+using System.Data.Entity;
+using Common;
 
 namespace MailSenderWPF.Services
 {
-    public interface IDataAccessService
+
+    //metadata=res://*/Emailxml.csdl|res://*/Emailxml.ssdl|res://*/Emailxml.msl;provider=System.Data.SqlClient;provider connection string="data source=(localdb)\MSSQLLocalDB;initial catalog=homework7;integrated security=True;pooling=False;MultipleActiveResultSets=True;App=EntityFramework"
+public interface IDataAccessService
     {
         ObservableCollection<Email> GetEmails();
-        int CreateEmail(Email email);
+        int AddEmail(Email email);
+        int UpdateEmail(Email email);
+        int DeleteEmail(Email email);
     }
-    /// <summary>
-    /// Класс реализующий доступ к базе данных
-    /// </summary>
     public class DataAccessService : IDataAccessService
     {
-        EmailsDataContext context;
-
+      EmailxmlContainer context;
         public DataAccessService()
         {
-            context = new EmailsDataContext();
+            context = new EmailxmlContainer();
         }
-
-        /// <summary>
-        /// Получить колекцию электронных адресов с базы данных
-        /// </summary>
         public ObservableCollection<Email> GetEmails()
         {
             ObservableCollection<Email> Emails = new ObservableCollection<Email>();
-            foreach (var item in context.Email)
-            {            
+            foreach (var item in context.Emails)
+            {
                 Emails.Add(item);
             }
             return Emails;
         }
-
-     /// <summary>
-     /// Добавить электронную почту в базу данных
-     /// </summary>
-     /// <param name="email">Email</param>
-     /// <returns>Id</returns>
-        public int CreateEmail(Email email)
+        public int AddEmail(Email email)
         {
-                context.Email.InsertOnSubmit(email);
-                context.SubmitChanges();
-                return email.Id;
+            context.Emails.Add(email);
+            context.SaveChanges();
+            return email.Id;
+        }
+        public int UpdateEmail(Email email)
+        {
+            context.Emails.Attach(email);
+            context.Entry(email).State = EntityState.Modified;
+            context.SaveChanges();
+            return email.Id;
+        }
+        public int DeleteEmail(Email email)
+        {
+            if (context.Entry(email).State == EntityState.Detached)
+            {
+                context.Emails.Attach(email);
+            }
+            context.Emails.Remove(email);
+
+        context.SaveChanges();
+            return email.Id;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using CodePasswordDLL;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Common;
 
 namespace MailSenderWPF
 {

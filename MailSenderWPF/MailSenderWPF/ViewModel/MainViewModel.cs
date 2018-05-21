@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using MailSenderWPF.Services;
 using System;
 using System.Windows;
+using Common;
 
 
 namespace MailSenderWPF.ViewModel
@@ -81,7 +82,7 @@ namespace MailSenderWPF.ViewModel
 
             try
             {
-                EmailInfo.Id = _serviceProxy.CreateEmail(email);
+                EmailInfo.Id = _serviceProxy.AddEmail(email);
                 if (EmailInfo.Id != 0)
                 {
                     Emails.Add(EmailInfo);
