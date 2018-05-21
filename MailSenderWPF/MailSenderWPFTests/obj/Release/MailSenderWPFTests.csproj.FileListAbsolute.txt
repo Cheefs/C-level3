@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPFTests\obj\Release\MailSenderWPFTests.csprojAssemblyReference.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPFTests\obj\Release\MailSenderWPFTests.csproj.CoreCompileInputs.cache

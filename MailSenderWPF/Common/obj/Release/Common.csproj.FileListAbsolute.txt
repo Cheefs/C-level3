@@ -1,0 +1,13 @@
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\Common.dll.config
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\Common.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\Common.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\EntityFramework.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\EntityFramework.xml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\bin\Release\ru\EntityFramework.resources.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.csprojAssemblyReference.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.csproj.CopyComplete
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.dll
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.pdb

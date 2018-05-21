@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Lesson6_HomeWork_Task2\bin\Release\Lesson6_HomeWork_Task2.exe.config
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Lesson6_HomeWork_Task2\bin\Release\Lesson6_HomeWork_Task2.exe
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Lesson6_HomeWork_Task2\bin\Release\Lesson6_HomeWork_Task2.pdb
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Lesson6_HomeWork_Task2\obj\Release\Lesson6_HomeWork_Task2.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Lesson6_HomeWork_Task2\obj\Release\Lesson6_HomeWork_Task2.exe
+C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Lesson6_HomeWork_Task2\obj\Release\Lesson6_HomeWork_Task2.pdb
