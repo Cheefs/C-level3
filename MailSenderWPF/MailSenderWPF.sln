@@ -9,11 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabSwitcher", "TabSwitcher\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderWPFTests", "MailSenderWPFTests\MailSenderWPFTests.csproj", "{AD5F900C-FBA3-4FBF-8A94-44793000B634}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson6_HomeWork Task1", "Lesson6_HomeWork\Lesson6_HomeWork Task1.csproj", "{563B49A5-701C-4A11-8347-DD8A56F76520}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson6_HomeWork_Task2", "Lesson6_HomeWork_Task2\Lesson6_HomeWork_Task2.csproj", "{686EEF4F-BC84-46FA-9397-0ECD576D0E61}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{38DD5FAC-F7D9-47C8-B2FE-4578CCC90B45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson7_HomeWork_Task4", "Lesson7_HomeWork_Task4\Lesson7_HomeWork_Task4.csproj", "{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +29,10 @@ Global
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Release|Any CPU.Build.0 = Release|Any CPU
-		{563B49A5-701C-4A11-8347-DD8A56F76520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{563B49A5-701C-4A11-8347-DD8A56F76520}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{563B49A5-701C-4A11-8347-DD8A56F76520}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{563B49A5-701C-4A11-8347-DD8A56F76520}.Release|Any CPU.Build.0 = Release|Any CPU
-		{686EEF4F-BC84-46FA-9397-0ECD576D0E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{686EEF4F-BC84-46FA-9397-0ECD576D0E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{686EEF4F-BC84-46FA-9397-0ECD576D0E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{686EEF4F-BC84-46FA-9397-0ECD576D0E61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38DD5FAC-F7D9-47C8-B2FE-4578CCC90B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38DD5FAC-F7D9-47C8-B2FE-4578CCC90B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38DD5FAC-F7D9-47C8-B2FE-4578CCC90B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38DD5FAC-F7D9-47C8-B2FE-4578CCC90B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,7 +32,7 @@ namespace MailSenderWPF
         private string head;
         private readonly DispatcherTimer timer = new DispatcherTimer();
         private MailSender mSender; 
-        private ObservableCollection<Email> emails;
+        public ObservableCollection<Email> emails;
         public Dictionary<DateTime, string> dicDates = new Dictionary<DateTime, string>();
         public Dictionary<DateTime, string> DatesEmailTexts
         {

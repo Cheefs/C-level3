@@ -22,10 +22,13 @@ namespace MailSenderWPF.ViewModel
             EmailInfo = new Email();
             ReadAllCommand = new RelayCommand(GetName);
             SaveCommand = new RelayCommand<Email>(SaveEmail);
+            DeleteCommand = new RelayCommand<Email>(DeleteEmail);
+            
 
         }
 
         public RelayCommand ReadAllCommand { get; set; }
+        public RelayCommand <Email> DeleteCommand { get; set; }
         public RelayCommand<Email> SaveCommand { get; set; }
         public RelayCommand<Email> GetCommand { get; set; }
         public string Name { get; set; }
@@ -95,6 +98,23 @@ namespace MailSenderWPF.ViewModel
             }
 
         }
+        private void DeleteEmail(Email email)
+        {
 
+            try
+            {
+                EmailInfo.Id = _serviceProxy.DeleteEmail(email);
+            
+                 //Emails.Remove(EmailInfo);
+                _serviceProxy.DeleteEmail(email);
+                    RaisePropertyChanged(nameof(EmailInfo));
+                
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("Данный Айди нельзя использовать");
+            }
+
+        }
     }
 }

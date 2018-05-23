@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Data.Entity;
 using Common;
+using MailSenderWPF.Viev;
 
 namespace MailSenderWPF.Services
 {
@@ -13,16 +14,18 @@ public interface IDataAccessService
         int UpdateEmail(Email email);
         int DeleteEmail(Email email);
     }
+
     public class DataAccessService : IDataAccessService
     {
-      EmailxmlContainer context;
+        public ObservableCollection<Email> Emails = new ObservableCollection<Email>();
+        EmailxmlContainer context;
         public DataAccessService()
         {
             context = new EmailxmlContainer();
         }
         public ObservableCollection<Email> GetEmails()
         {
-            ObservableCollection<Email> Emails = new ObservableCollection<Email>();
+            
             foreach (var item in context.Emails)
             {
                 Emails.Add(item);
@@ -44,7 +47,7 @@ public interface IDataAccessService
         }
         public int DeleteEmail(Email email)
         {
-            if (context.Entry(email).State == EntityState.Detached)
+            if (context.Entry(email).State == EntityState.Detached )
             {
                 context.Emails.Attach(email);
             }

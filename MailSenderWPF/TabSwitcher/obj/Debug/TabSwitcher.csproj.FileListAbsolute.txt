@@ -105,3 +105,21 @@ C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\TabSwi
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CopyComplete
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.dll
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.pdb
+D:\C#level3\MailSenderWPF\TabSwitcher\bin\Debug\TabSwitcher.dll
+D:\C#level3\MailSenderWPF\TabSwitcher\bin\Debug\TabSwitcher.pdb
+D:\C#level3\MailSenderWPF\TabSwitcher\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\EditControl.g.cs
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\ListViewItemScheduler.g.cs
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcherControl.g.cs
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher_MarkupCompile.cache
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher_MarkupCompile.lref
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\EditControl.baml
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\ListViewItemScheduler.baml
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcherControl.baml
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.g.resources
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.Properties.Resources.resources
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.GenerateResource.cache
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CoreCompileInputs.cache
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CopyComplete
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.dll
+D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.pdb

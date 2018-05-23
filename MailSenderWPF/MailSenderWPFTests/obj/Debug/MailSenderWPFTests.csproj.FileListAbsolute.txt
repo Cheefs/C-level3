@@ -51,3 +51,33 @@ C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSe
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPFTests\bin\Debug\Common.dll.config
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPFTests\bin\Debug\EntityFramework.xml
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPFTests\bin\Debug\ru\EntityFramework.resources.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderWPFTests.dll.config
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderWPFTests.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderWPFTests.pdb
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderWPF.exe
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderDll.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\Common.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\TabSwitcher.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\GalaSoft.MvvmLight.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\CommonServiceLocator.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\CodePasswordDLL.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\EntityFramework.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderWPF.pdb
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\MailSenderWPF.exe.config
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\Common.pdb
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\Common.dll.config
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\TabSwitcher.pdb
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\GalaSoft.MvvmLight.pdb
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\GalaSoft.MvvmLight.xml
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\EntityFramework.xml
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\bin\Debug\ru\EntityFramework.resources.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\obj\Debug\MailSenderWPFTests.csprojAssemblyReference.cache
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\obj\Debug\MailSenderWPFTests.csproj.CoreCompileInputs.cache
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\obj\Debug\MailSenderWPFTests.csproj.CopyComplete
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\obj\Debug\MailSenderWPFTests.dll
+D:\C#level3\MailSenderWPF\MailSenderWPFTests\obj\Debug\MailSenderWPFTests.pdb
