@@ -17,9 +17,10 @@ namespace MailSenderWPF
     {
         private EmailxmlContainer _container;
         public List<Email> ListInfo;
-        Email email;
-        DataAccessService accessService = new DataAccessService();
-      
+        private  Email email;
+        private  DataAccessService accessService = new DataAccessService();
+        private Reporting report;
+
 
 
         #region  реализация интерфейса IViev
@@ -39,11 +40,11 @@ namespace MailSenderWPF
 
             InitializeComponent();
             _container = new EmailxmlContainer();
-            Reporting report = new Reporting();
+          
             Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             Application.Current.MainWindow = this;
 
-           // docViever
+        
             _locator = (ViewModelLocator)FindResource("Locator");
             Scheduler sc = new Scheduler(this);
 
@@ -63,9 +64,9 @@ namespace MailSenderWPF
             cbSmtpSelect.DisplayMemberPath = "Key";
             cbSmtpSelect.SelectedValuePath = "Value";
             cbSmtpSelect.SelectedIndex = 0;
-
+            //Загрузка главной формы
             Main.Loaded += delegate{ Reload(); };
-
+            //Удаление записи с планировшика
             ListVievItemsScheduler.BtnDeleteClick += delegate
             {
                 if (dicDates.Keys != null)
@@ -74,9 +75,9 @@ namespace MailSenderWPF
                     lvwSheduler.Items.Refresh();
                 }
             };
-
+            //Перейти в планировшик
             btnClock.Click += delegate { tabControl.SelectedItem = tabPlanner; };
-
+            //Отправить письмо сейчас
             btnSendAtOnce.Click += delegate
             {
                 FlagNow = true;
@@ -89,7 +90,7 @@ namespace MailSenderWPF
                 else
                     sc.SendMails(_locator.Main.Emails);
             };
-
+            //Запланировать отправку писем через планировшик
             btnSend.Click += delegate
             {
                 sc.SendEmails(dicDates, _locator.Main.Emails);
@@ -98,7 +99,7 @@ namespace MailSenderWPF
                 rtbText.Text = null;
 
             };
-
+            //добавить в планировшик
             BtnAddToPlanner.Click += delegate
             {
                 var locator = (ViewModelLocator)FindResource("Locator");
@@ -116,7 +117,7 @@ namespace MailSenderWPF
                 DateTime.Today.Add(tsSendTime), MsgText);
                 lvwSheduler.Items.Refresh();
             };
-
+            //Скрыть или отобразить форму ввода нового адресата
             edcMails.BtnAddClick += delegate
             {
                 if (ctrlCaveEmail.Visibility == Visibility.Hidden)
@@ -138,7 +139,7 @@ namespace MailSenderWPF
   
             };
 
-            //Редактирование
+            //Отображения формы редактирования адресатов
             edcMails.BtnEditClick += delegate 
             {
                 if (tbxEditEmailName.Visibility == Visibility.Hidden)
@@ -155,7 +156,7 @@ namespace MailSenderWPF
                 }
 
             };
-
+            //Сохранение редактированыхданных
             btnSaveChenges.Click += delegate
               {
                   email = new Email()
@@ -167,10 +168,12 @@ namespace MailSenderWPF
                   };
                   DataAccessService accessService = new DataAccessService();
                   accessService.UpdateEmail(email);
-                  emailInfo.dgEmails.Items.Refresh();
-                  Reload();
+   
                  
               };
+            //Записать список адресатов в файл
+            btnReport.Click += delegate { report = new Reporting(); ; };
+
             #region ComingSoon
 
 
@@ -183,14 +186,15 @@ namespace MailSenderWPF
             edcSmpt.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSmpt.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
             #endregion
-
+            
+            //Отображение формы для ввода текста письма
             ListVievItemsScheduler.BtnAddClick += delegate
             {
                 if (rtbxBody.Visibility == Visibility.Visible)
                     rtbxBody.Visibility = Visibility.Hidden;
                 else rtbxBody.Visibility = Visibility.Visible;
             };
-
+            //Перейти на следующую вкладку
             tabSwtcher.btnNextClick += delegate
             {
                 if (tabControl.SelectedIndex > 0)
@@ -200,6 +204,7 @@ namespace MailSenderWPF
                 tabSwtcher.IsHideBtnPrevios = false;
                 tabControl.SelectedIndex++;
             };
+            //Перейти на предыдущую вкладку
             tabSwtcher.btnPreviosClick += delegate
             {
                 tabSwtcher.IsHideBtnNext = false;
@@ -211,6 +216,7 @@ namespace MailSenderWPF
             };
 
         }
+        //Перезагрузить даннные
         private void Reload()
         {
             ListInfo = _container.Emails.ToList();

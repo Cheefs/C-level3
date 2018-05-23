@@ -12,12 +12,14 @@ namespace MailSenderWPF.Services
             using (DocX doc = DocX.Load("report.doc"))
             {
                 Paragraph paragraph = doc.InsertParagraph();
-
-                foreach (var el in db.Emails)
+                if(db.Emails!=null)
                 {
-                    paragraph.Append($"ID: {el.Id}\tEmail: {el.Value}\tName: {el.Name}\n"); 
+                    foreach (var el in db.Emails)
+                    {
+                        paragraph.Append($"ID: {el.Id}\tEmail: {el.Value}\tName: {el.Name}\n");
+                    }
+                    doc.Save();
                 }
-                doc.Save();
             }
         }
     }

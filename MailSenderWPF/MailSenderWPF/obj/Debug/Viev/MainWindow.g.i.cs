@@ -488,6 +488,7 @@ namespace MailSenderWPF
         }
 
         internal System.Windows.Window Main;
+        internal System.Windows.Controls.Button btnReport;
     }
 }
 

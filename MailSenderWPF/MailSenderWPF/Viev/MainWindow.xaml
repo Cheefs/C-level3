@@ -144,6 +144,7 @@
                             </TextBox.Background>
                         </TextBox>
                         <Button x:Name="btnSaveChenges" ToolTip="SaveChenges" Content="Confirm" HorizontalAlignment="Left" Margin="524,96,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden"/>
+                        <Button x:Name="btnReport" Content="Запись адресатов в отчет" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="159" Height="29"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -253,7 +254,7 @@
                 </ToolBarPanel>
             </TabItem>
 
-           
+
 
             <TabItem x:Name="tabEdit" HorizontalAlignment="Left" Margin="-12,5,0,-2" Width="120" Header="Редактор писем">
                 <Grid>
