@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System;
 
 namespace Lesson7_HomeWork_Task3
 {
@@ -15,22 +16,26 @@ namespace Lesson7_HomeWork_Task3
         public MainWindow()
         {
             InitializeComponent();
-
+            DataAccessService dt = new DataAccessService();
             Model model = new Model(this);
+
             //Ресурсы
             cbxSelectMovie.ItemsSource =model.movies;
-            dtgOrders.ItemsSource = model.orders;
+            dtgOrders.ItemsSource = dt.GetOrder();
 
-
-
-            // Временно вся логика тут, просто сбор макета программы, потом все разделено будет
             // вывод в дата грид ради теста, потом будет в базу данных передавать, дата грид останется
     
             btnCOnfirm.Click += delegate
             {
-
-                model.AddOrder();
-             
+                Orders ord = new Orders()
+                {
+                    DateTime = DateTime.Now.ToString(),
+                    Movie = VievMovie,
+                    SoldBilets = VievBiletsCount
+                };
+                dt.NewOrder(ord);
+                
+               // model.AddOrder();    
                 dtgOrders.Items.Refresh();
             };
 

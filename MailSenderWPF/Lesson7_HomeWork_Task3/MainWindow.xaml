@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="cbxSelectMovie" HorizontalAlignment="Left" Margin="90,167,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txbBiletsCount" HorizontalAlignment="Left" Height="23" Margin="235,166,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnCOnfirm" Content="Button" HorizontalAlignment="Left" Margin="195,235,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox x:Name="cbxSelectMovie" ToolTip="Выбор Киносеанса" HorizontalAlignment="Left" Margin="90,167,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txbBiletsCount" HorizontalAlignment="Left" Height="23" Margin="235,166,0,0" TextWrapping="Wrap" ToolTip="Количество билетов" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnCOnfirm" Content="Подтвердить заказ" HorizontalAlignment="Left" Margin="160,235,0,0" VerticalAlignment="Top" Width="140"/>
         <DataGrid x:Name="dtgOrders" HorizontalAlignment="Left" Height="240" Margin="400,95,0,0" VerticalAlignment="Top" Width="270"/>
 
     </Grid>
