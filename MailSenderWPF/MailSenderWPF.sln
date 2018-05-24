@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderWPFTests", "MailS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson7_HomeWork_Task4", "Lesson7_HomeWork_Task4\Lesson7_HomeWork_Task4.csproj", "{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson7_HomeWork_Task3", "Lesson7_HomeWork_Task3\Lesson7_HomeWork_Task3.csproj", "{48577691-BF19-47DA-9E85-AD3FF3DE24CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
