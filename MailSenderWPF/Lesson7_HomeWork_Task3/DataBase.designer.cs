@@ -116,15 +116,16 @@ namespace Lesson7_HomeWork_Task3
 			}
 			set
 			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
+            
+                if ((this._Id != value))
+                {
+                    this.OnIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._Id = value;
+                    this.SendPropertyChanged("Id");
+                    this.OnIdChanged();
+                }
+            }
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Movie", DbType="NVarChar(MAX)")]

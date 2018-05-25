@@ -19,8 +19,9 @@ namespace Lesson7_HomeWork_Task3
         public class DataAccessService : IDataAccessService
         {
             DataBaseDataContext context;
+          
 
-            public DataAccessService()
+        public DataAccessService()
             {
                 context = new DataBaseDataContext();
             }
