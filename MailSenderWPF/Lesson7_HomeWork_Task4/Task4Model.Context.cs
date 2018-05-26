@@ -12,7 +12,7 @@ namespace Lesson7_HomeWork_Task4
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     public partial class Task4ModelContainer : DbContext
     {

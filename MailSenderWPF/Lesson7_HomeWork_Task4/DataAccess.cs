@@ -14,7 +14,6 @@ namespace Lesson7_HomeWork_Task4
 
     public class DataAccessService : IDataAccessService
     {
-        public ObservableCollection<Task4> Info = new ObservableCollection<Task4>();
         Task4ModelContainer context;
       
         public DataAccessService()
@@ -24,7 +23,7 @@ namespace Lesson7_HomeWork_Task4
         }
         public ObservableCollection<Task4> GetInfo()
         {
-
+            ObservableCollection<Task4> Info = new ObservableCollection<Task4>();
             foreach (var item in context.Task4Set)
             {
                 Info.Add(item);
@@ -39,6 +38,7 @@ namespace Lesson7_HomeWork_Task4
         }
         public int Update(Task4 info)
         {
+
             context.Task4Set.Attach(info);
             context.Entry(info).State = EntityState.Modified;
             context.SaveChanges();

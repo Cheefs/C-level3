@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
+using System.Collections.ObjectModel;
 
 namespace Lesson7_HomeWork_Task3
 {
@@ -12,14 +12,13 @@ namespace Lesson7_HomeWork_Task3
             this.viev = Viev;
         }
 
-       public List<Order> orders = new List<Order>();
+       public ObservableCollection <Order> orders = new ObservableCollection<Order>();
        public List<string> movies = new List<string>()
-            {
+       {
                "boolWekend",
                "charX",
                "string3"
-            };
-
+       };
         public void AddOrder()
         {
             orders.Add(new Order
@@ -28,7 +27,6 @@ namespace Lesson7_HomeWork_Task3
                 BiletsCount = viev.VievBiletsCount,
                 Time = DateTime.Now.ToString()
             });
-        }
-       
+        }     
     }
 }

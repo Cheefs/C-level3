@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator">
+      <HintPath>C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 1\HomeWork\packages\CommonServiceLocator.2.0.3\lib\netstandard2.0\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
