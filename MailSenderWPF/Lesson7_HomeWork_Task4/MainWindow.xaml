@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Margin="10,0,0,0">
         <DataGrid x:Name="dtgInfo" Margin="5,120,5,5" AutoGenerateColumns="False" IsReadOnly="True"
-                ItemsSource="{Binding ListInfo}">
+                ItemsSource="{Binding Task4Set}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"
 Width="30"

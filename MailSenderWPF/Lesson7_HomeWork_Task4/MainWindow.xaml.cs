@@ -1,7 +1,7 @@
 ﻿
 using System.Windows;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 //        4. *Есть CSV-файл с таким содержанием:
 //      Иванов И.И., ivanov @mail.ru, +7(111) 123-45-67
@@ -20,25 +20,20 @@ namespace Lesson7_HomeWork_Task4
     public partial class MainWindow : Window
     {
         DataAccessService dt = new DataAccessService();
-        string Phone {get => tbxPhone.Text; set =>tbxPhone.Text = value;}
-        string Email{get => txbEmail.Text; set => txbEmail.Text =value;}
+        string Phone { get => tbxPhone.Text; set => tbxPhone.Text = value; }
+        string Email { get => txbEmail.Text; set => txbEmail.Text = value; }
         string FIO { get => txbFIO.Text; set => txbFIO.Text = value; }
-     
+
         private Task4ModelContainer _context;
-        public List<Task4> ListInfo = new List<Task4>();
+        public List<Task4> ListInfo;
         private void Reload()
         {
-            ListInfo.Clear();
-
-          
-            if (ListInfo != null)
+            using (_context = new Task4ModelContainer())
             {
-              // _context.Dispose();
-            
                 ListInfo = _context.Task4Set.ToList();
                 dtgInfo.ItemsSource = ListInfo;
-            }
-         
+            };
+
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -46,48 +41,43 @@ namespace Lesson7_HomeWork_Task4
         }
         public MainWindow()
         {
-            _context = new Task4ModelContainer();
-            _context.Configuration.AutoDetectChangesEnabled = true;
-
             InitializeComponent();
             Task4 info = new Task4();
-           
-            Task4ModelContainer model = new Task4ModelContainer();
-            Parser p = new Parser();
-            model.Configuration.AutoDetectChangesEnabled = true;
 
-            LabelTest.Content = dtgInfo.SelectedIndex;
-        
-            btnParceCsv.Click += delegate{ p.Read(); Reload(); };
+            Parser p = new Parser();
+
+            btnParceCsv.Click += delegate { p.Read(); Reload(); };
             btnEdit.Click += delegate
             {
                 tbxPhone.Text = ListInfo[dtgInfo.SelectedIndex].Phone;
                 txbEmail.Text = ListInfo[dtgInfo.SelectedIndex].Email;
-                txbFIO.Text = ListInfo[dtgInfo.SelectedIndex].FIO;            
+                txbFIO.Text = ListInfo[dtgInfo.SelectedIndex].FIO;
             };
 
             btnSave.Click += delegate
             {
-                info = new Task4()
+                using (_context = new Task4ModelContainer())
                 {
-                    Id = ListInfo[dtgInfo.SelectedIndex].Id,
-                    FIO = FIO,
-                    Email = Email,
-                    Phone = Phone
+                    info = _context.Task4Set.Find(dt.GetInfo().ElementAt(dtgInfo.SelectedIndex).Id);
+
+                    info.FIO = FIO;
+                    info.Email = Email;
+                    info.Phone = Phone;
+
+                    _context.Task4Set.Attach(info);
+                    _context.Entry(info).State = EntityState.Modified;
+                    _context.SaveChanges();
                 };
-
-                dt.Update(info);
-                
-            };
-            
-       
-
-            btnRefresh.Click += delegate
-            {
+              
+                dtgInfo.Items.Refresh();
                 Reload();
+
             };
 
-           }
-  
+                btnRefresh.Click += delegate
+                {
+                    Reload();
+                };
+        }
     }
 }

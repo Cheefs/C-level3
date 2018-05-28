@@ -128,6 +128,7 @@ namespace MailSenderWPF
             //Удаление из списка адресатов
             edcMails.BtnDeleteClick += delegate
             {
+                this.Reload();
                 email = new Email()
                 {
                     Id = ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
@@ -136,7 +137,7 @@ namespace MailSenderWPF
                 };
 
                 accessService.DeleteEmail(email);
-  
+                
             };
 
             //Отображения формы редактирования адресатов
@@ -156,9 +157,10 @@ namespace MailSenderWPF
                 }
 
             };
-            //Сохранение редактированыхданных
+            //Сохранение редактированых данных
             btnSaveChenges.Click += delegate
               {
+                  this.Reload();
                   email = new Email()
                   {
                       Id = ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
@@ -168,7 +170,7 @@ namespace MailSenderWPF
                   };
                   DataAccessService accessService = new DataAccessService();
                   accessService.UpdateEmail(email);
-   
+            
                  
               };
             //Записать список адресатов в файл

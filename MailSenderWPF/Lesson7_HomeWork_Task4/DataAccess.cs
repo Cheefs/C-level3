@@ -1,6 +1,7 @@
 ﻿
 using System.Data.Entity;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace Lesson7_HomeWork_Task4
 {
@@ -8,7 +9,7 @@ namespace Lesson7_HomeWork_Task4
     {
         ObservableCollection<Task4> GetInfo();
         int Add(Task4 info);
-        int Update(Task4 info);
+        //int Update(Task4 info);
         //int DeleteEmail(Email email);
     }
 
@@ -32,18 +33,12 @@ namespace Lesson7_HomeWork_Task4
         }
         public int Add(Task4 info)
         {
+            context.Entry(info).State = EntityState.Added;
             context.Task4Set.Add(info);
             context.SaveChanges();
             return info.Id;
         }
-        public int Update(Task4 info)
-        {
-
-            context.Task4Set.Attach(info);
-            context.Entry(info).State = EntityState.Modified;
-            context.SaveChanges();
-            return info.Id;
-        }
+       
         //public int DeleteEmail(Email email)
         //{
         //    if (context.Entry(email).State == EntityState.Detached)

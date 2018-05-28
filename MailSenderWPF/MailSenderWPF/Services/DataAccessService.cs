@@ -52,8 +52,7 @@ public interface IDataAccessService
                 context.Emails.Attach(email);
             }
             context.Emails.Remove(email);
-
-        context.SaveChanges();
+            context.SaveChanges();
             return email.Id;
         }
     }
