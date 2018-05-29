@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MailSenderWPF.Services;
 using Common;
+using System.Data.Entity;
 
 
 namespace MailSenderWPF
@@ -16,7 +17,7 @@ namespace MailSenderWPF
     public partial class MainWindow : Window, IViev
     {
         private EmailxmlContainer _container;
-        public List<Email> ListInfo;
+       // public List<Email> ListInfo;
         private  Email email;
         private  DataAccessService accessService = new DataAccessService();
         private Reporting report;
@@ -39,7 +40,7 @@ namespace MailSenderWPF
            
 
             InitializeComponent();
-            _container = new EmailxmlContainer();
+           
           
             Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             Application.Current.MainWindow = this;
@@ -128,16 +129,29 @@ namespace MailSenderWPF
             //Удаление из списка адресатов
             edcMails.BtnDeleteClick += delegate
             {
-                this.Reload();
-                email = new Email()
-                {
-                    Id = ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
-                    Name = ListInfo[emailInfo.dgEmails.SelectedIndex].Name,
-                    Value = ListInfo[emailInfo.dgEmails.SelectedIndex].Value
-                };
 
-                accessService.DeleteEmail(email);
-                
+                this.Reload();
+
+                using (_container = new EmailxmlContainer())
+                {
+                    email = _container.Emails.Find(accessService.GetEmails().ElementAt(emailInfo.dgEmails.SelectedIndex).Id);
+                    //accessService.GetEmails().ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
+                    if (_container.Entry(email).State == EntityState.Detached)
+                    {
+                        _container.Emails.Attach(email);
+                    }
+                    _container.Emails.Remove(email);
+                    _container.SaveChanges();
+                };
+                //email = new Email()
+                //{
+                //    Id = ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
+                //    Name = ListInfo[emailInfo.dgEmails.SelectedIndex].Name,
+                //    Value = ListInfo[emailInfo.dgEmails.SelectedIndex].Value
+                //};
+
+                //accessService.DeleteEmail(email);
+
             };
 
             //Отображения формы редактирования адресатов
@@ -161,18 +175,22 @@ namespace MailSenderWPF
             btnSaveChenges.Click += delegate
               {
                   this.Reload();
-                  email = new Email()
-                  {
-                      Id = ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
-                      Name = tbxEditEmailName.Text,
-                      Value = tbxEditEmailsValue.Text
 
+                  using (_container = new EmailxmlContainer())
+                  {
+                      email = _container.Emails.Find(accessService.GetEmails().ElementAt(emailInfo.dgEmails.SelectedIndex).Id);
+                      //accessService.GetEmails().ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
+                      email.Name = tbxEditEmailName.Text;
+                      email.Value = tbxEditEmailsValue.Text;
+
+                      _container.Emails.Attach(email);
+                      _container.Entry(email).State = EntityState.Modified;
+                      _container.SaveChanges();
                   };
-                  DataAccessService accessService = new DataAccessService();
-                  accessService.UpdateEmail(email);
-            
-                 
-              };
+                     
+                 // DataAccessService accessService = new DataAccessService();
+                 // accessService.UpdateEmail(email);
+            };
             //Записать список адресатов в файл
             btnReport.Click += delegate { report = new Reporting(); ; };
 
@@ -221,8 +239,12 @@ namespace MailSenderWPF
         //Перезагрузить даннные
         private void Reload()
         {
-            ListInfo = _container.Emails.ToList();
-            emailInfo.dgEmails.ItemsSource = ListInfo;
+            using (_container = new EmailxmlContainer())
+            {
+                emailInfo.dgEmails.ItemsSource = _container.Emails.ToList();
+            };
+                // ListInfo = _container.Emails.ToList();
+               
         }  
     }
 }

@@ -40,7 +40,7 @@ public interface IDataAccessService
         }
         public int UpdateEmail(Email email)
         {
-            context.Emails.Attach(email);
+           context.Emails.Attach(email);
             context.Entry(email).State = EntityState.Modified;
             context.SaveChanges();
             return email.Id;
