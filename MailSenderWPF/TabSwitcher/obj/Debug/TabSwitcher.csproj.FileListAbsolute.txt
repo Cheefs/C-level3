@@ -123,3 +123,21 @@ D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CoreCompileIn
 D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CopyComplete
 D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.dll
 D:\C#level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.pdb
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\bin\Debug\TabSwitcher.dll
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\bin\Debug\TabSwitcher.pdb
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\EditControl.g.cs
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\ListViewItemScheduler.g.cs
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcherControl.g.cs
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher_MarkupCompile.cache
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher_MarkupCompile.lref
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\EditControl.baml
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\ListViewItemScheduler.baml
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcherControl.baml
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.g.resources
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.Properties.Resources.resources
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.GenerateResource.cache
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.csproj.CopyComplete
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.dll
+C:\Users\User\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\TabSwitcher\obj\Debug\TabSwitcher.pdb

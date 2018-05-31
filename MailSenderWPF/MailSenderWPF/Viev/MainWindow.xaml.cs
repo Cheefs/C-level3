@@ -22,8 +22,6 @@ namespace MailSenderWPF
         private  DataAccessService accessService = new DataAccessService();
         private Reporting report;
 
-
-
         #region  реализация интерфейса IViev
         public string MsgText { get => rtbText.Text; set => rtbText.Text = value; }
         public string Sender { get => cbSenderSelect.Text; set => cbSenderSelect.Text = value; }
@@ -48,7 +46,7 @@ namespace MailSenderWPF
         
             _locator = (ViewModelLocator)FindResource("Locator");
             Scheduler sc = new Scheduler(this);
-
+            
             lvwSheduler.Items.Clear();
             lvwSheduler.ItemsSource = dicDates;
 
@@ -169,16 +167,18 @@ namespace MailSenderWPF
                     tbxEditEmailsValue.Visibility = Visibility.Hidden;
                     btnSaveChenges.Visibility = Visibility.Hidden;
                 }
+                MessageBox.Show(emailInfo.dgEmails.SelectedIndex.ToString());
 
             };
             //Сохранение редактированых данных
             btnSaveChenges.Click += delegate
               {
-                  this.Reload();
-
+                 
+                  int id = emailInfo.dgEmails.SelectedIndex;
                   using (_container = new EmailxmlContainer())
                   {
-                      email = _container.Emails.Find(accessService.GetEmails().ElementAt(emailInfo.dgEmails.SelectedIndex).Id);
+                     
+                      email = _container.Emails.Find(accessService.GetEmails().ElementAt(id).Id);
                       //accessService.GetEmails().ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
                       email.Name = tbxEditEmailName.Text;
                       email.Value = tbxEditEmailsValue.Text;
@@ -187,10 +187,10 @@ namespace MailSenderWPF
                       _container.Entry(email).State = EntityState.Modified;
                       _container.SaveChanges();
                   };
-                     
-                 // DataAccessService accessService = new DataAccessService();
-                 // accessService.UpdateEmail(email);
-            };
+                  Reload();
+                  // DataAccessService accessService = new DataAccessService();
+                  // accessService.UpdateEmail(email);
+              };
             //Записать список адресатов в файл
             btnReport.Click += delegate { report = new Reporting(); ; };
 
@@ -236,12 +236,21 @@ namespace MailSenderWPF
             };
 
         }
+
+        private void DgEmails_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         //Перезагрузить даннные
         private void Reload()
         {
+            emailInfo.dgEmails.Items.Refresh();
             using (_container = new EmailxmlContainer())
             {
-                emailInfo.dgEmails.ItemsSource = _container.Emails.ToList();
+                List<Email> em;
+                em = _container.Emails.ToList();
+                emailInfo.dgEmails.ItemsSource=em ;
             };
                 // ListInfo = _container.Emails.ToList();
                

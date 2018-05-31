@@ -26,7 +26,6 @@ namespace MailSenderWPF.ViewModel
             
 
         }
-
         public RelayCommand ReadAllCommand { get; set; }
         public RelayCommand <Email> DeleteCommand { get; set; }
         public RelayCommand<Email> SaveCommand { get; set; }

@@ -1,12 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Data.Entity;
 using Common;
-using MailSenderWPF.Viev;
 
 namespace MailSenderWPF.Services
 {
-
-    //metadata=res://*/Emailxml.csdl|res://*/Emailxml.ssdl|res://*/Emailxml.msl;provider=System.Data.SqlClient;provider connection string="data source=(localdb)\MSSQLLocalDB;initial catalog=homework7;integrated security=True;pooling=False;MultipleActiveResultSets=True;App=EntityFramework"
 public interface IDataAccessService
     {
         ObservableCollection<Email> GetEmails();

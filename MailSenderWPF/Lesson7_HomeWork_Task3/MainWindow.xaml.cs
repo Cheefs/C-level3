@@ -36,9 +36,11 @@ namespace Lesson7_HomeWork_Task3
 
             btnCOnfirm.Click += delegate
             {
+              
                 Orders ord = new Orders()
                 {
                     Id =dt.GetOrder().Count+1,
+                    // ИСПРАВИТЬ ТАК БЫТЬ НЕДОЛЖНО
                     DateTime = DateTime.Now.ToString(),
                     Movie = VievMovie,
                     SoldBilets = VievBiletsCount
