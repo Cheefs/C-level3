@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-using System.Data.Entity;
 using Common;
+using System.Data.Entity;
 
 namespace MailSenderWPF.Services
 {
@@ -8,7 +8,6 @@ public interface IDataAccessService
     {
         ObservableCollection<Email> GetEmails();
         int AddEmail(Email email);
-        int UpdateEmail(Email email);
         int DeleteEmail(Email email);
     }
 
@@ -37,18 +36,20 @@ public interface IDataAccessService
         }
         public int UpdateEmail(Email email)
         {
-           context.Emails.Attach(email);
+            context.Emails.Attach(email);
             context.Entry(email).State = EntityState.Modified;
             context.SaveChanges();
             return email.Id;
         }
+
         public int DeleteEmail(Email email)
         {
-            if (context.Entry(email).State == EntityState.Detached )
+            if (context.Entry(email).State == EntityState.Detached)
             {
                 context.Emails.Attach(email);
             }
             context.Emails.Remove(email);
+
             context.SaveChanges();
             return email.Id;
         }

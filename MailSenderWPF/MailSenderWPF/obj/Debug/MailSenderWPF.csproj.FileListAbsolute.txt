@@ -221,7 +221,6 @@ C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSe
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Extras.dll
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\GalaSoft.MvvmLight.Platform.dll
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.dll
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\TabSwitcher.pdb
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\EntityFramework.xml
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\MailSenderWPF\bin\Debug\EntityFramework.SqlServer.xml
