@@ -104,7 +104,7 @@ namespace MailSenderWPF.ViewModel
             {
                 EmailInfo.Id = _serviceProxy.DeleteEmail(email);
             
-                 //Emails.Remove(EmailInfo);
+                 Emails.Remove(EmailInfo);
                 _serviceProxy.DeleteEmail(email);
                     RaisePropertyChanged(nameof(EmailInfo));
                 

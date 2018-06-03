@@ -5,13 +5,7 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderWPF", "MailSenderWPF\MailSenderWPF.csproj", "{643F2218-98ED-44BE-A357-0BFCD29DD911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabSwitcher", "TabSwitcher\TabSwitcher.csproj", "{8174892C-2162-4259-A946-D13D02D03144}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSenderWPFTests", "MailSenderWPFTests\MailSenderWPFTests.csproj", "{AD5F900C-FBA3-4FBF-8A94-44793000B634}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson7_HomeWork_Task4", "Lesson7_HomeWork_Task4\Lesson7_HomeWork_Task4.csproj", "{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson7_HomeWork_Task3", "Lesson7_HomeWork_Task3\Lesson7_HomeWork_Task3.csproj", "{48577691-BF19-47DA-9E85-AD3FF3DE24CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +17,10 @@ Global
 		{643F2218-98ED-44BE-A357-0BFCD29DD911}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{643F2218-98ED-44BE-A357-0BFCD29DD911}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{643F2218-98ED-44BE-A357-0BFCD29DD911}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8174892C-2162-4259-A946-D13D02D03144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8174892C-2162-4259-A946-D13D02D03144}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8174892C-2162-4259-A946-D13D02D03144}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8174892C-2162-4259-A946-D13D02D03144}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD5F900C-FBA3-4FBF-8A94-44793000B634}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB32BC46-5AEF-4775-8FB7-4DCE63A88A7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48577691-BF19-47DA-9E85-AD3FF3DE24CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

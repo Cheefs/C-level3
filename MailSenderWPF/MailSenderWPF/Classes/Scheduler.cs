@@ -91,7 +91,6 @@ namespace MailSenderWPF
             }
         }
 
-
         public async void SendMails(ObservableCollection<Email> emails)
         {
             if(viev.FlagNow == true)

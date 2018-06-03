@@ -17,7 +17,6 @@ namespace MailSenderWPF
     public partial class MainWindow : Window, IViev
     {
         private EmailxmlContainer _container;
-       // public List<Email> ListInfo;
         private  Email email;
         private  DataAccessService accessService = new DataAccessService();
         private Reporting report;
@@ -141,15 +140,6 @@ namespace MailSenderWPF
                     _container.Emails.Remove(email);
                     _container.SaveChanges();
                 };
-                //email = new Email()
-                //{
-                //    Id = ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
-                //    Name = ListInfo[emailInfo.dgEmails.SelectedIndex].Name,
-                //    Value = ListInfo[emailInfo.dgEmails.SelectedIndex].Value
-                //};
-
-                //accessService.DeleteEmail(email);
-
             };
 
             //Отображения формы редактирования адресатов
@@ -167,7 +157,6 @@ namespace MailSenderWPF
                     tbxEditEmailsValue.Visibility = Visibility.Hidden;
                     btnSaveChenges.Visibility = Visibility.Hidden;
                 }
-                MessageBox.Show(emailInfo.dgEmails.SelectedIndex.ToString());
 
             };
             //Сохранение редактированых данных
@@ -188,8 +177,6 @@ namespace MailSenderWPF
                       _container.SaveChanges();
                   };
                   Reload();
-                  // DataAccessService accessService = new DataAccessService();
-                  // accessService.UpdateEmail(email);
               };
             //Записать список адресатов в файл
             btnReport.Click += delegate { report = new Reporting(); ; };
@@ -237,12 +224,7 @@ namespace MailSenderWPF
 
         }
 
-        private void DgEmails_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        //Перезагрузить даннные
+       //Перезагрузить даннные
         private void Reload()
         {
             emailInfo.dgEmails.Items.Refresh();
@@ -251,9 +233,7 @@ namespace MailSenderWPF
                 List<Email> em;
                 em = _container.Emails.ToList();
                 emailInfo.dgEmails.ItemsSource=em ;
-            };
-                // ListInfo = _container.Emails.ToList();
-               
+            };      
         }  
     }
 }
