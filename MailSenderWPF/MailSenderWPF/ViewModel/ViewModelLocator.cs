@@ -7,7 +7,7 @@ namespace MailSenderWPF.ViewModel
 {
     public class ViewModelLocator
     {
-   
+     
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);

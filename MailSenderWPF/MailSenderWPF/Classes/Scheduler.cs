@@ -30,6 +30,8 @@ namespace MailSenderWPF
         Error ew = new Error();
         private string body;
         private string head;
+        private string correctSmtp;
+        private int correctPort;
         private readonly DispatcherTimer timer = new DispatcherTimer();
         private MailSender mSender; 
         public ObservableCollection<Email> emails;
@@ -91,22 +93,43 @@ namespace MailSenderWPF
             }
         }
 
+        public bool CheckSmpt()
+        {
+            foreach (var el in VariablesClass.SmptServer.Keys)
+            {
+                string[] temp = viev.Sender.Split('@');
+                // string[] ed = el.Split('.');
+                temp[1] = "smtp." + temp[1];
+                if (temp[1] == el)
+                {
+                    correctSmtp = el;
+                    correctPort=VariablesClass.SmptServer[el];
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
         public async void SendMails(ObservableCollection<Email> emails)
         {
-            if(viev.FlagNow == true)
+            CheckSmpt();
+            if (viev.FlagNow == true)
             {
                 body = viev.MsgText;
-                head = viev.MsgHead;
+                head = DateTime.Now.ToString();
                 viev.FlagNow = false;
             }
+
             mSender = new MailSender(viev.Sender, CodePassword.GetPassword(VariablesClass.Senders[viev.Sender]))
             {
                 StrBody = body,
                 StrSubject = head,
-                SmptServer = viev.SmptServer,
-                SmtpPort = VariablesClass.SmptServer[viev.SmptServer]
+                SmptServer = /*viev.SmptServer,*/ correctSmtp,
+                SmtpPort = VariablesClass.SmptServer[correctSmtp]
 
             };
+
             bool err = false;
             try
             {

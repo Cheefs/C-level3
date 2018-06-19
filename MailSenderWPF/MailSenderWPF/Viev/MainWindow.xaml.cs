@@ -20,13 +20,15 @@ namespace MailSenderWPF
         private  Email email;
         private  DataAccessService accessService = new DataAccessService();
         private Reporting report;
+        private int id;
 
         #region  реализация интерфейса IViev
         public string MsgText { get => rtbText.Text; set => rtbText.Text = value; }
         public string Sender { get => cbSenderSelect.Text; set => cbSenderSelect.Text = value; }
-        public string MsgHead { get => tbxHeadMsg.Text; set => tbxHeadMsg.Text = value; }
+        //public string MsgHead { get => tbxHeadMsg.Text; set => tbxHeadMsg.Text = value; }
         public string SmptServer { get => cbSmtpSelect.Text; set => cbSmtpSelect.Text = value; }
         public bool FlagNow { get; set; }
+        public bool SaveFlag { get; set; }
 
         #endregion
 
@@ -34,17 +36,19 @@ namespace MailSenderWPF
         Dictionary<DateTime, string> dicDates = new Dictionary<DateTime, string>();
         public MainWindow()
         {
+            
            
 
             InitializeComponent();
-           
+ 
+               
           
             Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             Application.Current.MainWindow = this;
-
+Scheduler sc = new Scheduler(this);
         
             _locator = (ViewModelLocator)FindResource("Locator");
-            Scheduler sc = new Scheduler(this);
+            
             
             lvwSheduler.Items.Clear();
             lvwSheduler.ItemsSource = dicDates;
@@ -65,6 +69,7 @@ namespace MailSenderWPF
             //Загрузка главной формы
             Main.Loaded += delegate{ Reload(); };
             //Удаление записи с планировшика
+
             ListVievItemsScheduler.BtnDeleteClick += delegate
             {
                 if (dicDates.Keys != null)
@@ -78,20 +83,27 @@ namespace MailSenderWPF
             //Отправить письмо сейчас
             btnSendAtOnce.Click += delegate
             {
-                FlagNow = true;
-                MailSender mailSender = new MailSender(cbSenderSelect.Text, cbSenderSelect.SelectedValue.ToString());
-                if (MsgText == "" || MsgHead == "")
+                if (sc.CheckSmpt() == true)
                 {
-                    MessageBox.Show("Заполните текст письма");
-                    rtbxBody.Visibility = Visibility.Visible;
+                    FlagNow = true;
+                    MailSender mailSender = new MailSender(cbSenderSelect.Text, cbSenderSelect.SelectedValue.ToString());
+                    if (MsgText == "")
+                    {
+                        MessageBox.Show("Заполните текст письма");
+                        rtbxBody.Visibility = Visibility.Visible;
+                    }
+                    else
+                        sc.SendMails(_locator.Main.Emails);
+                    //sc.SendMails(accessService.Emails);
                 }
-                else
-                    sc.SendMails(_locator.Main.Emails);
+                else MessageBox.Show("Отсутствует необходимый smtp сервер, пожалуйста выберите другого отправителя или" +
+                    " добавте сервер во вкладке настройки");
             };
             //Запланировать отправку писем через планировшик
             btnSend.Click += delegate
             {
                 sc.SendEmails(dicDates, _locator.Main.Emails);
+                //sc.SendEmails(dicDates, accessService.Emails);
                 lvwSheduler.Items.Refresh();
                 rtbxBody.Visibility = Visibility.Hidden;
                 rtbText.Text = null;
@@ -126,20 +138,20 @@ namespace MailSenderWPF
             //Удаление из списка адресатов
             edcMails.BtnDeleteClick += delegate
             {
-
-                this.Reload();
-
                 using (_container = new EmailxmlContainer())
                 {
-                    email = _container.Emails.Find(accessService.GetEmails().ElementAt(emailInfo.dgEmails.SelectedIndex).Id);
+                    id = emailInfo.dgEmails.SelectedIndex;
+                    email = _container.Emails.Find(accessService.GetEmails().ElementAt(id).Id);
                     //accessService.GetEmails().ListInfo[emailInfo.dgEmails.SelectedIndex].Id,
-                    if (_container.Entry(email).State == EntityState.Detached)
-                    {
+                 //   if (_container.Entry(email).State == EntityState.Detached)
+                    //{
                         _container.Emails.Attach(email);
-                    }
+                   // }
                     _container.Emails.Remove(email);
                     _container.SaveChanges();
                 };
+                Reload();
+
             };
 
             //Отображения формы редактирования адресатов
@@ -163,7 +175,7 @@ namespace MailSenderWPF
             btnSaveChenges.Click += delegate
               {
                  
-                  int id = emailInfo.dgEmails.SelectedIndex;
+                  id = emailInfo.dgEmails.SelectedIndex;
                   using (_container = new EmailxmlContainer())
                   {
                      
@@ -221,20 +233,53 @@ namespace MailSenderWPF
                 }
                 tabControl.SelectedIndex--;
             };
-
         }
-
+        
        //Перезагрузить даннные
-        private void Reload()
+        public void Reload()
         {
-            emailInfo.dgEmails.Items.Refresh();
+            // MainWindow mw = new MainWindow();
+            //emailInfo.dgEmails.Items.Refresh();
             using (_container = new EmailxmlContainer())
             {
                 List<Email> em;
                 em = _container.Emails.ToList();
-                emailInfo.dgEmails.ItemsSource=em ;
-            };      
-        }  
+                emailInfo.dgEmails.ItemsSource = em;
+            } ;      
+        }
+
+        private void btnTest_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var el in VariablesClass.SmptServer.Keys)
+            {
+                //string[] temp = Sender.Split('@');
+                //string[] ed = el.Split('.');
+                //string smpt = ed[1] +"."+ ed[2];
+                //if (temp[1]==smpt)
+                //{
+                //    el=Key;
+                //    VariablesClass.SmptServer[el] = Port;
+                //    //VariablesClass.SmptServer
+                //    //var smptCorrect = VariablesClass.SmptServer ;
+                //    MessageBox.Show($"Почта {VariablesClass.SmptServer[SmptServer]}, Сервер{el}");
+                //}
+
+
+
+                string[] temp = Sender.Split('@');
+               // string[] ed = el.Split('.');
+                temp[1] = "smtp." + temp[1];
+                if (temp[1] == el)
+                {
+                    //el=Key;
+                    //VariablesClass.SmptServer[el] = Port;
+                    //VariablesClass.SmptServer;
+                    var smptCorrect = VariablesClass.SmptServer;
+                    MessageBox.Show($"Почта {temp[1]}, Сервер{el}");
+                }
+
+            }
+        }
     }
 }
 

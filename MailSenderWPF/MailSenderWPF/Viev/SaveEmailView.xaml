@@ -56,7 +56,7 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
-        <Button Content="Сохранить"
+        <Button Name="btnSaveNewEmail" Content="Сохранить"
                 FontWeight="Bold" Grid.Row="5"
                 Grid.ColumnSpan="2"
                 Command="{Binding SaveCommand}" CommandParameter="{Binding EmailInfo}" Height="22"

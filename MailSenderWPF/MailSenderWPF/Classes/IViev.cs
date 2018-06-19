@@ -5,7 +5,7 @@
         /// <summary>
         /// Тема сообщения 
         /// </summary>
-        string MsgHead { get; set; }
+        //string MsgHead { get; set; }
         /// <summary>
         /// Текст сообщения
         /// </summary>

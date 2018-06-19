@@ -5,6 +5,8 @@ using MailSenderWPF.Services;
 using System;
 using System.Windows;
 using Common;
+using System.Collections.Generic;
+using System.Linq;
 
 
 namespace MailSenderWPF.ViewModel
@@ -89,6 +91,11 @@ namespace MailSenderWPF.ViewModel
                 {
                     Emails.Add(EmailInfo);
                     RaisePropertyChanged(nameof(EmailInfo));
+
+                    MainWindow mw = new MainWindow();
+                  
+                        mw.Reload();
+             
                 }
             }
             catch (Exception)

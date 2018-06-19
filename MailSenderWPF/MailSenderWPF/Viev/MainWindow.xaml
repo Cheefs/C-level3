@@ -82,7 +82,7 @@
                                         </LinearGradientBrush>
                                     </Label.Foreground>
                                 </Label>
-                                <ComboBox x:Name="cbSmtpSelect" Height="Auto" Width="167" ToolTip="Выбрать smtp-сервер" SelectedIndex="1" Foreground="#FF01021B">
+                                <ComboBox x:Name="cbSmtpSelect" Height="Auto" Width="167" ToolTip="НЕАКТУАЛЬНО В ДАННОЙ ВЕРСИИ" SelectedIndex="1" Foreground="#FF01021B">
                                     <ComboBox.Background>
                                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                             <GradientStop Color="#FF878585" Offset="0"/>
@@ -150,6 +150,7 @@
                         </TextBox>
                         <Button x:Name="btnSaveChenges" ToolTip="SaveChenges" Content="Confirm" HorizontalAlignment="Left" Margin="524,96,0,0" VerticalAlignment="Top" Width="75" Visibility="Hidden"/>
                         <Button x:Name="btnReport" Content="Запись адресатов в отчет" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="159" Height="29"/>
+                        <Button x:Name="btnTest" Content="Button" HorizontalAlignment="Left" Margin="254,76,0,0" VerticalAlignment="Top" Width="75" Click="btnTest_Click"/>
                     </Grid>
                 </Grid>
             </TabItem>
