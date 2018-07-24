@@ -11,3 +11,15 @@ C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.csproj.CopyComplete
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.dll
 C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\obj\Release\Common.pdb
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\Common.dll.config
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\Common.dll
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\Common.pdb
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\EntityFramework.dll
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\EntityFramework.xml
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\obj\Release\Common.csprojAssemblyReference.cache
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\obj\Release\Common.csproj.CoreCompileInputs.cache
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\obj\Release\Common.csproj.CopyComplete
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\obj\Release\Common.dll
+C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\obj\Release\Common.pdb

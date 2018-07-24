@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\User\Desktop\C# Developer\4- C# Level 3\Homework 7\MailSenderWPF\Common\Emailxml.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\karol\Desktop\C# Developer\GitRepo\C-level3\MailSenderWPF\MyDll\Common\Emailxml.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

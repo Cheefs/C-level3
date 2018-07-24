@@ -26,7 +26,7 @@ namespace MailSenderWPF
         public string MsgText { get => rtbText.Text; set => rtbText.Text = value; }
         public string Sender { get => cbSenderSelect.Text; set => cbSenderSelect.Text = value; }
         //public string MsgHead { get => tbxHeadMsg.Text; set => tbxHeadMsg.Text = value; }
-        public string SmptServer { get => cbSmtpSelect.Text; set => cbSmtpSelect.Text = value; }
+       // public string SmptServer { get => cbSmtpSelect.Text; set => cbSmtpSelect.Text = value; }
         public bool FlagNow { get; set; }
         public bool SaveFlag { get; set; }
 
@@ -62,10 +62,10 @@ Scheduler sc = new Scheduler(this);
             cbSenderSelect.SelectedIndex = 0;
 
 
-            cbSmtpSelect.ItemsSource = VariablesClass.SmptServer;
-            cbSmtpSelect.DisplayMemberPath = "Key";
-            cbSmtpSelect.SelectedValuePath = "Value";
-            cbSmtpSelect.SelectedIndex = 0;
+           // cbSmtpSelect.ItemsSource = VariablesClass.SmptServer;
+            //cbSmtpSelect.DisplayMemberPath = "Key";
+            //.SelectedValuePath = "Value";
+           // cbSmtpSelect.SelectedIndex = 0;
             //Загрузка главной формы
             Main.Loaded += delegate{ Reload(); };
             //Удаление записи с планировшика
@@ -201,9 +201,9 @@ Scheduler sc = new Scheduler(this);
             edcSender.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
             edcSender.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
 
-            edcSmpt.BtnAddClick += delegate { MessageBox.Show("ComingSoon"); };
-            edcSmpt.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
-            edcSmpt.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
+           // edcSmpt.BtnAddClick += delegate { MessageBox.Show("ComingSoon"); };
+          //  edcSmpt.BtnDeleteClick += delegate { MessageBox.Show("ComingSoon"); };
+          //  edcSmpt.BtnEditClick += delegate { MessageBox.Show("ComingSoon"); };
             #endregion
             
             //Отображение формы для ввода текста письма

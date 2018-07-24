@@ -17,7 +17,7 @@
         /// <summary>
         /// Настройка Smpt сервера
         /// </summary>
-        string SmptServer { get; set; }
+       // string SmptServer { get; set; }
         bool FlagNow { get; set; }
     }
 }
